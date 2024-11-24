@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Pohon Tumbuh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #2e7d32;
+        }
+
+        .tree-container {
+            width: 200px;
+            height: 300px;
+            position: relative;
+        }
+
+        .trunk {
+            width: 20px;
+            height: 100px;
+            background-color: #8d6e63;
+            position: absolute;
+            bottom: 0;
+            left: 90px;
+            animation: growTrunk 3s ease forwards;
+        }
+
+        .leaves {
+            position: absolute;
+            width: 0;
+            height: 0;
+            background-color: #4caf50;
+            border-radius: 50%;
+            bottom: 80px;
+            left: 45px;
+            opacity: 0;
+            animation: growLeaves 3s ease forwards 3s;
+        }
+
+        @keyframes growTrunk {
+            from {
+                height: 0;
+            }
+            to {
+                height: 100px;
+            }
+        }
+
+        @keyframes growLeaves {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            100% {
+                width: 110px;
+                height: 110px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animasi Pertumbuhan Pohon</h1>
+    <div class="tree-container">
+        <div class="trunk"></div>
+        <div class="leaves"></div>
+    </div>
+</body>
+</html>
